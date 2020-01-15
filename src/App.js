@@ -1,9 +1,9 @@
-import React, {useContext} from "react";
+import React, { createContext } from "react";
 import "./App.css";
 import Table from "./Table";
 import useResponsive from "./useResponsive";
 
-export const ResponsiveContext = React.createContext();
+export const ResponsiveContext = createContext();
 
 function App() {
   const responsiveData = useResponsive();
