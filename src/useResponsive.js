@@ -16,19 +16,20 @@ export const mq = {
   xxxxl: `1500`,
   xxxxxl: `1600`,
   xxxxxxl: `1700`
-}
+};
 
 export const MQ = (min, max) => {
   if (!min && !max) {
-    return ``
+    return ``;
   } else if (min && !max) {
-    return `only screen and (min-width: ${min}px)`
+    return `only screen and (min-width: ${min}px)`;
   } else if (!min && max) {
-    return `only screen and (max-width: ${max - 1}px)`
+    return `only screen and (max-width: ${max - 1}px)`;
   } else {
-    return `only screen and (min-width: ${min}px) and (max-width: ${max - 1}px)`
+    return `only screen and (min-width: ${min}px) and (max-width: ${max -
+      1}px)`;
   }
-}
+};
 
 const useResponsive = ({
   mobileQuery = MQ(mq.xxxs, mq.s),
@@ -39,12 +40,15 @@ const useResponsive = ({
   const isTablet = useMedia(tabletQuery);
   const isDesktop = useMedia(desktopQuery);
   const isPortrait = useMedia(`only screen and (orientation: portrait)`);
+  const isLandscape = !isPortrait;
   const orientation = isPortrait ? "portrait" : "landscape";
 
   return {
     isMobile,
     isTablet,
     isDesktop,
+    isPortrait,
+    isLandscape,
     orientation
   };
 };

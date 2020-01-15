@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Table from "./Table";
 import useResponsive from "./useResponsive";
@@ -12,7 +11,6 @@ function App() {
     <ResponsiveContext.Provider value={responsiveData}>
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <Table responsiveData={responsiveData} />
         </header>
       </div>
