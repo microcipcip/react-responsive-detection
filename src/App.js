@@ -11,7 +11,7 @@ function App() {
     <ResponsiveContext.Provider value={responsiveData}>
       <div className="App">
         <header className="App-header">
-          <Table responsiveData={responsiveData} />
+          <Table />
         </header>
       </div>
     </ResponsiveContext.Provider>
